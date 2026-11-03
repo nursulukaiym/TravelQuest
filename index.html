@@ -1,1 +1,189 @@
-<!doctype html><html lang="kk"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TravelQuest — Әлемді аш</title><link rel="stylesheet" href="assets/style.css"></head><body><header class="nav"><a class="brand" href="index.html">✦ Travel<span>Quest</span></a><nav><a class="current" href="index.html">Басты бет</a><a href="explore.html">Бағыттар</a><a href="login.html">Кіру</a></nav><a class="navcta" href="explore.html">Саяхатты бастау ↗</a></header><main><section class="hero"><div class="heroShade"></div><div class="heroContent"><span class="eyebrow">✧ СЕНІҢ КЕЛЕСІ ШЫТЫРМАН ОҚИҒАҢ ОСЫНДА</span><h1>Әлем сені<br><em>күтіп тұр.</em></h1><p>Армандаған жерлеріңді тап, таңдаулыларға сақта және өзіңнің ерекше саяхат жоспарыңды жаса.</p><a class="primary" href="explore.html">Бағыттарды зерттеу <span>↗</span></a><div class="heroStats"><span><b>8</b> ерекше бағыт</span><span><b>3</b> құрлық</span><span><b>∞</b> әсер</span></div></div><div class="heroNote">📍 Каппадокия, Түркия</div></section><section class="section"><div class="sectionTop"><div><span class="kicker">САЯХАТҚА ШАБЫТ</span><h2>Танымал бағыттар <span class="accent">✳</span></h2></div><a class="textLink" href="explore.html">Барлығын көру →</a></div><div class="featureGrid"><a class="destination" href="explore.html?place=istanbul"><img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?auto=format&fit=crop&w=1000&q=85" alt="Ыстамбұл көрінісі"><div class="destText"><small>ТҮРКИЯ</small><h3>Ыстамбұл</h3><span>Тарих пен мәдениет →</span></div></a><a class="destination" href="explore.html?place=paris"><img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?auto=format&fit=crop&w=1000&q=85" alt="Париж көрінісі"><div class="destText"><small>ФРАНЦИЯ</small><h3>Париж</h3><span>Романтикалық қала →</span></div></a><a class="destination" href="explore.html?place=tokyo"><img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?auto=format&fit=crop&w=1000&q=85" alt="Токио көрінісі"><div class="destText"><small>ЖАПОНИЯ</small><h3>Токио</h3><span>Болашақ пен дәстүр →</span></div></a></div></section><section class="banner"><div><span class="kicker">ӨЗ ЖОЛЫҢДЫ ТАҢДА</span><h2>Бір күні емес.<br>Бүгін жоспарла.</h2><p>Таңдаулы бағыттарыңды жинап, жеке саяхат тізіміңді жаса.</p></div><a class="primary light" href="explore.html">Жоспарымды жасау ↗</a></section><section class="section steps"><div class="sectionTop"><div><span class="kicker">ӨТЕ ОҢАЙ</span><h2>Үш қадам — бір шытырман оқиға</h2></div></div><div class="stepGrid"><article><b>01</b><h3>🌍 Зертте</h3><p>Қызықты қалалар мен елдер арасынан өз бағытыңды тап.</p></article><article><b>02</b><h3>♡ Сақта</h3><p>Ұнаған жерлеріңді таңдаулылар тізіміне қос.</p></article><article><b>03</b><h3>✈ Жоспарла</h3><p>Жеке жоспарыңа күн мен ескертпе жаз.</p></article></div></section></main><footer><b>✦ TravelQuest</b><span>Әлемді зертте. Естеліктер жина. © 2026</span><span>Оқу жобасы · 9-апта</span></footer><script src="assets/app.js"></script></body></html>
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TravelQuest — Саяхат әлемі</title>
+  <link rel="stylesheet" href="assets/style.css">
+  <script src="assets/app.js" defer></script>
+</head>
+<body>
+
+<div class="phone">
+  <header class="topbar">
+    <div class="brand">🌍 TravelQuest</div>
+    <span class="top-avatar">✈️</span>
+  </header>
+
+  <main>
+    <section id="home" class="screen active">
+      <div class="welcome">
+        <p>Сәлем, саяхатшы! 👋</p>
+        <h1>Әлемді бірге ашайық!</h1>
+        <p>Армандаған саяхатыңды бүгіннен жоспарла.</p>
+      </div>
+
+      <h2>🔥 Танымал бағыттар</h2>
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Париж">
+        <div class="card-info">
+          <h3>🗼 Париж, Франция</h3>
+          <p>Махаббат пен өнер қаласы</p>
+          <button onclick="openPage('explore')">Толығырақ</button>
+        </div>
+      </div>
+
+      <div class="destination-card">
+        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800" alt="Стамбул">
+        <div class="card-info">
+          <h3>🕌 Стамбул, Түркия</h3>
+          <p>Тарих пен мәдениет мекені</p>
+          <button onclick="openPage('explore')">Толығырақ</button>
+        </div>
+      </div>
+    </section>
+
+    <section id="trips" class="screen">
+      <h1>🧳 Менің саяхаттарым</h1>
+      <p>Жоспарлаған сапарларың осы жерде сақталады.</p>
+      <div id="tripList"></div>
+      <button class="primary-btn" onclick="openPage('add')">
+        + Жаңа саяхат
+      </button>
+    </section>
+
+    <section id="add" class="screen">
+      <h1>✈️ Саяхат қосу</h1>
+      <p>Келесі саяхатыңды жоспарла!</p>
+
+      <form id="tripForm">
+        <label for="tripCity">Қай қалаға барасың?</label>
+        <select id="tripCity" required>
+          <option value="">Қаланы таңда</option>
+          <option>Париж</option>
+          <option>Стамбул</option>
+          <option>Токио</option>
+          <option>Дубай</option>
+          <option>Рим</option>
+          <option>Алматы</option>
+          <option>Бали</option>
+          <option>Сеул</option>
+        </select>
+
+        <label for="tripDate">Саяхат күні</label>
+        <input type="date" id="tripDate" required>
+
+        <label for="tripNote">Ескертпе</label>
+        <textarea id="tripNote" placeholder="Не көргің келеді?"></textarea>
+
+        <button type="submit" class="primary-btn">
+          Саяхатты сақтау
+        </button>
+      </form>
+      <p id="tripMessage"></p>
+    </section>
+
+    <section id="explore" class="screen">
+      <h1>🧭 Әлемді зертте</h1>
+      <p>Өзіңе ұнайтын бағытты таңда.</p>
+
+      <input type="search" id="search"
+             placeholder="🔎 Қала немесе ел іздеу...">
+
+      <div id="destinations" class="explore-grid"></div>
+    </section>
+
+    <section id="calendar" class="screen">
+      <h1>📅 Саяхат күнтізбесі</h1>
+      <p>Алдағы сапарларыңды бақыла.</p>
+      <div class="calendar-box">
+        <input type="month" id="calendarMonth">
+        <div id="calendarGrid"></div>
+      </div>
+      <h2>Жоспарланған сапарлар</h2>
+      <div id="calendarTrips"></div>
+    </section>
+
+    <section id="settings" class="screen">
+      <h1>⚙️ Баптаулар</h1>
+      <div class="settings-card">
+        <div class="profile-avatar">🌎</div>
+        <h2 id="profileName">Саяхатшы</h2>
+        <p>TravelQuest қолданушысы</p>
+      </div>
+
+      <label for="userName">Есімің</label>
+      <input id="userName" placeholder="Есіміңді енгіз">
+
+      <button class="primary-btn" onclick="saveProfile()">
+        Профильді сақтау
+      </button>
+
+      <button class="secondary-btn" onclick="toggleTheme()">
+        🌙 Тақырыпты ауыстыру
+      </button>
+
+      <button class="secondary-btn" onclick="openPage('auth')">
+        🔐 Кіру / тіркелу
+      </button>
+    </section>
+
+    <section id="auth" class="screen">
+      <h1>🔐 TravelQuest</h1>
+      <p>Саяхат әлеміне қош келдің!</p>
+
+      <div class="auth-tabs">
+        <button id="loginTab" onclick="setAuthMode('login')">
+          Кіру
+        </button>
+        <button id="registerTab" onclick="setAuthMode('register')">
+          Тіркелу
+        </button>
+      </div>
+
+      <form id="authForm">
+        <div id="nameField" class="hidden">
+          <label for="authName">Есімің</label>
+          <input id="authName" placeholder="Есімің">
+        </div>
+
+        <label for="authEmail">Email</label>
+        <input type="email" id="authEmail" required>
+
+        <label for="authPassword">Құпиясөз</label>
+        <input type="password" id="authPassword"
+               minlength="6" required>
+
+        <button type="submit" id="authSubmit" class="primary-btn">
+          Кіру
+        </button>
+      </form>
+      <p id="authMessage"></p>
+      <small>Бұл — 9-аптаға арналған интерфейс үлгісі.</small>
+    </section>
+  </main>
+
+  <nav class="bottom-nav">
+    <button data-page="home" onclick="openPage('home')">
+      <span>🏠</span>Басты
+    </button>
+    <button data-page="trips" onclick="openPage('trips')">
+      <span>🧳</span>Саяхаттар
+    </button>
+    <button data-page="add" onclick="openPage('add')">
+      <span>➕</span>Қосу
+    </button>
+    <button data-page="explore" onclick="openPage('explore')">
+      <span>🧭</span>Бағыттар
+    </button>
+    <button data-page="calendar" onclick="openPage('calendar')">
+      <span>📅</span>Күнтізбе
+    </button>
+    <button data-page="settings" onclick="openPage('settings')">
+      <span>⚙️</span>Баптау
+    </button>
+  </nav>
+</div>
+
+</body>
+</html>
