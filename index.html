@@ -1,189 +1,320 @@
 <!DOCTYPE html>
 <html lang="kk">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>TravelQuest — Саяхат әлемі</title>
-  <link rel="stylesheet" href="assets/style.css">
-  <script src="assets/app.js" defer></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TravelQuest — Саяхат әлемі</title>
+    <link rel="stylesheet" href="assets/style.css?v=10">
+    <script src="assets/app.js?v=10" defer></script>
 </head>
 <body>
 
-<div class="phone">
-  <header class="topbar">
-    <div class="brand">🌍 TravelQuest</div>
-    <span class="top-avatar">✈️</span>
-  </header>
+<header class="header">
+    <div class="container header-inner">
+        <a href="#home" class="logo">🌍 TravelQuest</a>
 
-  <main>
+        <nav class="navigation">
+            <button data-page="home" onclick="openPage('home')">Басты бет</button>
+            <button data-page="explore" onclick="openPage('explore')">Бағыттар</button>
+            <button data-page="trips" onclick="openPage('trips')">Менің саяхаттарым</button>
+            <button data-page="calendar" onclick="openPage('calendar')">Күнтізбе</button>
+            <button data-page="settings" onclick="openPage('settings')">Баптаулар</button>
+        </nav>
+
+        <button class="login-button" onclick="openPage('auth')">
+            Кіру
+        </button>
+    </div>
+</header>
+
+<main class="container">
+
+    <!-- БАСТЫ БЕТ -->
     <section id="home" class="screen active">
-      <div class="welcome">
-        <p>Сәлем, саяхатшы! 👋</p>
-        <h1>Әлемді бірге ашайық!</h1>
-        <p>Армандаған саяхатыңды бүгіннен жоспарла.</p>
-      </div>
 
-      <h2>🔥 Танымал бағыттар</h2>
-      <div class="destination-card">
-        <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=800" alt="Париж">
-        <div class="card-info">
-          <h3>🗼 Париж, Франция</h3>
-          <p>Махаббат пен өнер қаласы</p>
-          <button onclick="openPage('explore')">Толығырақ</button>
+        <div class="hero">
+            <div class="hero-content">
+                <span class="tag">✈️ Саяхат әлеміне қош келдің!</span>
+                <h1>Әлемді зертте.<br>Жаңа әсер жина.</h1>
+                <p>
+                    TravelQuest көмегімен армандаған саяхатыңды
+                    жоспарла және әлемнің ең әдемі жерлерін аш!
+                </p>
+                <button class="btn btn-white" onclick="openPage('explore')">
+                    Бағыттарды зерттеу →
+                </button>
+                <button class="btn btn-glass" onclick="openPage('add')">
+                    + Саяхат жоспарлау
+                </button>
+            </div>
         </div>
-      </div>
 
-      <div class="destination-card">
-        <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=800" alt="Стамбул">
-        <div class="card-info">
-          <h3>🕌 Стамбул, Түркия</h3>
-          <p>Тарих пен мәдениет мекені</p>
-          <button onclick="openPage('explore')">Толығырақ</button>
+        <div class="section-heading">
+            <div>
+                <span class="section-label">САЯХАТ ШАБЫТЫ</span>
+                <h2>🔥 Танымал бағыттар</h2>
+                <p>Әлемдегі ерекше орындарды бірге ашайық</p>
+            </div>
+            <button class="text-button" onclick="openPage('explore')">
+                Барлығын көру →
+            </button>
         </div>
-      </div>
+
+        <div class="featured-grid">
+            <article class="featured-card">
+                <img src="https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=1000" alt="Париж">
+                <div class="featured-content">
+                    <span>🇫🇷 ФРАНЦИЯ</span>
+                    <h3>Париж</h3>
+                    <p>Өнер мен әсемдік қаласы</p>
+                    <button onclick="planCity('Париж')">Саяхат жоспарлау →</button>
+                </div>
+            </article>
+
+            <article class="featured-card">
+                <img src="https://images.unsplash.com/photo-1541432901042-2d8bd64b4a9b?w=1000" alt="Стамбул">
+                <div class="featured-content">
+                    <span>🇹🇷 ТҮРКИЯ</span>
+                    <h3>Стамбул</h3>
+                    <p>Тарих пен мәдениет орталығы</p>
+                    <button onclick="planCity('Стамбул')">Саяхат жоспарлау →</button>
+                </div>
+            </article>
+
+            <article class="featured-card">
+                <img src="https://images.unsplash.com/photo-1540959733332-eab4deabeeaf?w=1000" alt="Токио">
+                <div class="featured-content">
+                    <span>🇯🇵 ЖАПОНИЯ</span>
+                    <h3>Токио</h3>
+                    <p>Болашақ пен дәстүр мекені</p>
+                    <button onclick="planCity('Токио')">Саяхат жоспарлау →</button>
+                </div>
+            </article>
+        </div>
+
+        <div class="benefits">
+            <div>
+                <span>🗺️</span>
+                <h3>Бағыттарды зертте</h3>
+                <p>Өзіңе ұнайтын ел мен қаланы таңда.</p>
+            </div>
+            <div>
+                <span>📅</span>
+                <h3>Саяхатты жоспарла</h3>
+                <p>Сапар күндерін күнтізбеге енгіз.</p>
+            </div>
+            <div>
+                <span>❤️</span>
+                <h3>Таңдаулыларды сақта</h3>
+                <p>Ұнаған бағыттарды жоғалтпа.</p>
+            </div>
+        </div>
     </section>
 
-    <section id="trips" class="screen">
-      <h1>🧳 Менің саяхаттарым</h1>
-      <p>Жоспарлаған сапарларың осы жерде сақталады.</p>
-      <div id="tripList"></div>
-      <button class="primary-btn" onclick="openPage('add')">
-        + Жаңа саяхат
-      </button>
-    </section>
-
-    <section id="add" class="screen">
-      <h1>✈️ Саяхат қосу</h1>
-      <p>Келесі саяхатыңды жоспарла!</p>
-
-      <form id="tripForm">
-        <label for="tripCity">Қай қалаға барасың?</label>
-        <select id="tripCity" required>
-          <option value="">Қаланы таңда</option>
-          <option>Париж</option>
-          <option>Стамбул</option>
-          <option>Токио</option>
-          <option>Дубай</option>
-          <option>Рим</option>
-          <option>Алматы</option>
-          <option>Бали</option>
-          <option>Сеул</option>
-        </select>
-
-        <label for="tripDate">Саяхат күні</label>
-        <input type="date" id="tripDate" required>
-
-        <label for="tripNote">Ескертпе</label>
-        <textarea id="tripNote" placeholder="Не көргің келеді?"></textarea>
-
-        <button type="submit" class="primary-btn">
-          Саяхатты сақтау
-        </button>
-      </form>
-      <p id="tripMessage"></p>
-    </section>
-
+    <!-- БАҒЫТТАР -->
     <section id="explore" class="screen">
-      <h1>🧭 Әлемді зертте</h1>
-      <p>Өзіңе ұнайтын бағытты таңда.</p>
-
-      <input type="search" id="search"
-             placeholder="🔎 Қала немесе ел іздеу...">
-
-      <div id="destinations" class="explore-grid"></div>
-    </section>
-
-    <section id="calendar" class="screen">
-      <h1>📅 Саяхат күнтізбесі</h1>
-      <p>Алдағы сапарларыңды бақыла.</p>
-      <div class="calendar-box">
-        <input type="month" id="calendarMonth">
-        <div id="calendarGrid"></div>
-      </div>
-      <h2>Жоспарланған сапарлар</h2>
-      <div id="calendarTrips"></div>
-    </section>
-
-    <section id="settings" class="screen">
-      <h1>⚙️ Баптаулар</h1>
-      <div class="settings-card">
-        <div class="profile-avatar">🌎</div>
-        <h2 id="profileName">Саяхатшы</h2>
-        <p>TravelQuest қолданушысы</p>
-      </div>
-
-      <label for="userName">Есімің</label>
-      <input id="userName" placeholder="Есіміңді енгіз">
-
-      <button class="primary-btn" onclick="saveProfile()">
-        Профильді сақтау
-      </button>
-
-      <button class="secondary-btn" onclick="toggleTheme()">
-        🌙 Тақырыпты ауыстыру
-      </button>
-
-      <button class="secondary-btn" onclick="openPage('auth')">
-        🔐 Кіру / тіркелу
-      </button>
-    </section>
-
-    <section id="auth" class="screen">
-      <h1>🔐 TravelQuest</h1>
-      <p>Саяхат әлеміне қош келдің!</p>
-
-      <div class="auth-tabs">
-        <button id="loginTab" onclick="setAuthMode('login')">
-          Кіру
-        </button>
-        <button id="registerTab" onclick="setAuthMode('register')">
-          Тіркелу
-        </button>
-      </div>
-
-      <form id="authForm">
-        <div id="nameField" class="hidden">
-          <label for="authName">Есімің</label>
-          <input id="authName" placeholder="Есімің">
+        <div class="page-title">
+            <span class="section-label">ӘЛЕМДІ АШ</span>
+            <h1>🧭 Саяхат бағыттары</h1>
+            <p>Қай елге барғың келеді? Өзіңе ұнайтын бағытты таңда.</p>
         </div>
 
-        <label for="authEmail">Email</label>
-        <input type="email" id="authEmail" required>
+        <div class="search-panel">
+            <input type="search" id="search" placeholder="🔎 Қала немесе елді іздеу...">
+            <span>🌍 Әлемді бірге зерттейік</span>
+        </div>
 
-        <label for="authPassword">Құпиясөз</label>
-        <input type="password" id="authPassword"
-               minlength="6" required>
-
-        <button type="submit" id="authSubmit" class="primary-btn">
-          Кіру
-        </button>
-      </form>
-      <p id="authMessage"></p>
-      <small>Бұл — 9-аптаға арналған интерфейс үлгісі.</small>
+        <div id="destinations" class="destination-grid"></div>
     </section>
-  </main>
 
-  <nav class="bottom-nav">
-    <button data-page="home" onclick="openPage('home')">
-      <span>🏠</span>Басты
-    </button>
-    <button data-page="trips" onclick="openPage('trips')">
-      <span>🧳</span>Саяхаттар
-    </button>
-    <button data-page="add" onclick="openPage('add')">
-      <span>➕</span>Қосу
-    </button>
-    <button data-page="explore" onclick="openPage('explore')">
-      <span>🧭</span>Бағыттар
-    </button>
-    <button data-page="calendar" onclick="openPage('calendar')">
-      <span>📅</span>Күнтізбе
-    </button>
-    <button data-page="settings" onclick="openPage('settings')">
-      <span>⚙️</span>Баптау
-    </button>
-  </nav>
-</div>
+    <!-- МЕНІҢ САЯХАТТАРЫМ -->
+    <section id="trips" class="screen">
+        <div class="page-title">
+            <span class="section-label">ЖЕКЕ ЖОСПАР</span>
+            <h1>🧳 Менің саяхаттарым</h1>
+            <p>Барлық жоспарланған сапарларың бір жерде.</p>
+        </div>
+
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span>✈️ Жоспарланған саяхаттар</span>
+                <strong id="tripCount">0</strong>
+            </div>
+            <div class="stat-card">
+                <span>❤️ Таңдаулы бағыттар</span>
+                <strong id="favCount">0</strong>
+            </div>
+        </div>
+
+        <div class="list-heading">
+            <h2>Менің жоспарларым</h2>
+            <button class="btn btn-primary" onclick="openPage('add')">
+                + Жаңа саяхат
+            </button>
+        </div>
+
+        <div id="tripList" class="trip-grid"></div>
+    </section>
+
+    <!-- САЯХАТ ҚОСУ -->
+    <section id="add" class="screen">
+        <div class="page-title">
+            <span class="section-label">ЖАҢА САЯХАТ</span>
+            <h1>✈️ Саяхат жоспарлау</h1>
+            <p>Келесі саяхатыңды дәл қазір жоспарла.</p>
+        </div>
+
+        <div class="form-layout">
+            <div class="form-card">
+                <h2>Саяхат мәліметтері</h2>
+
+                <form id="tripForm">
+                    <label for="tripCity">Саяхат бағыты</label>
+                    <select id="tripCity" required>
+                        <option value="">Қаланы таңда</option>
+                        <option>Париж</option>
+                        <option>Стамбул</option>
+                        <option>Токио</option>
+                        <option>Дубай</option>
+                        <option>Рим</option>
+                        <option>Сеул</option>
+                        <option>Бали</option>
+                        <option>Алматы</option>
+                    </select>
+
+                    <label for="tripDate">Саяхат күні</label>
+                    <input type="date" id="tripDate" required>
+
+                    <label for="tripNote">Саяхат жоспары</label>
+                    <textarea id="tripNote" rows="5" placeholder="Қандай жерлерге барғың келеді?"></textarea>
+
+                    <button type="submit" class="btn btn-primary full">
+                        💾 Саяхатты сақтау
+                    </button>
+                </form>
+
+                <p id="tripMessage" class="message" aria-live="polite"></p>
+            </div>
+
+            <div class="side-info">
+                <div class="info-emoji">🌴</div>
+                <h2>Жаңа саяхат — жаңа әсер!</h2>
+                <p>
+                    Бағытыңды таңда, сапар күнін белгіле және
+                    жоспарларыңды сақта.
+                </p>
+                <div class="info-line">✓ Саяхат күнтізбесі</div>
+                <div class="info-line">✓ Жеке жоспарлар</div>
+                <div class="info-line">✓ Ыңғайлы интерфейс</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- КҮНТІЗБЕ -->
+    <section id="calendar" class="screen">
+        <div class="page-title">
+            <span class="section-label">САЯХАТ КҮНТІЗБЕСІ</span>
+            <h1>📅 Менің күнтізбем</h1>
+            <p>Алдағы саяхат күндерін бақыла.</p>
+        </div>
+
+        <div class="calendar-layout">
+            <div class="form-card">
+                <label for="calendarMonth">Айды таңда</label>
+                <input type="month" id="calendarMonth">
+                <div id="calendarGrid" class="calendar-grid"></div>
+            </div>
+
+            <div class="form-card">
+                <h2>📌 Осы айдағы сапарлар</h2>
+                <div id="calendarTrips"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- БАПТАУЛАР -->
+    <section id="settings" class="screen">
+        <div class="page-title">
+            <span class="section-label">ЖЕКЕ КАБИНЕТ</span>
+            <h1>⚙️ Баптаулар</h1>
+            <p>Профиліңді өзіңе ыңғайлы етіп ретте.</p>
+        </div>
+
+        <div class="settings-layout">
+            <div class="profile-card">
+                <div class="profile-icon">🌍</div>
+                <h2 id="profileName">Саяхатшы</h2>
+                <p>TravelQuest Explorer</p>
+            </div>
+
+            <div class="form-card">
+                <h2>Профиль параметрлері</h2>
+
+                <label for="userName">Есімің</label>
+                <input id="userName" placeholder="Есіміңді жаз">
+
+                <button class="btn btn-primary full" onclick="saveProfile()">
+                    Профильді сақтау
+                </button>
+
+                <button class="btn btn-outline full" onclick="toggleTheme()">
+                    🌙 Түнгі / күндізгі режим
+                </button>
+
+                <button class="btn btn-outline full" onclick="openPage('auth')">
+                    🔐 Кіру / тіркелу
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- КІРУ -->
+    <section id="auth" class="screen">
+        <div class="auth-wrapper">
+            <div class="auth-card">
+                <div class="auth-icon">🌍</div>
+                <h1>TravelQuest</h1>
+                <p>Саяхат әлеміне қош келдің!</p>
+
+                <div class="auth-tabs">
+                    <button id="loginTab" class="selected" onclick="setAuthMode('login')">Кіру</button>
+                    <button id="registerTab" onclick="setAuthMode('register')">Тіркелу</button>
+                </div>
+
+                <form id="authForm">
+                    <div id="nameField" class="hidden">
+                        <label for="authName">Есімің</label>
+                        <input id="authName" placeholder="Есімің">
+                    </div>
+
+                    <label for="authEmail">Email</label>
+                    <input type="email" id="authEmail" required placeholder="example@gmail.com">
+
+                    <label for="authPassword">Құпиясөз</label>
+                    <input type="password" id="authPassword" minlength="6" required placeholder="Кемінде 6 таңба">
+
+                    <button type="submit" id="authSubmit" class="btn btn-primary full">
+                        Кіру
+                    </button>
+                </form>
+
+                <p id="authMessage" class="message" aria-live="polite"></p>
+                <small>Бұл — frontend демонстрациялық нұсқасы.</small>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer class="footer">
+    <div class="container footer-inner">
+        <div>
+            <h3>🌍 TravelQuest</h3>
+            <p>Әлемді зертте. Жаңа әсер жина.</p>
+        </div>
+        <p>© 2026 TravelQuest. Frontend жоба.</p>
+    </div>
+</footer>
 
 </body>
 </html>
